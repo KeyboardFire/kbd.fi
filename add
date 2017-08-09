@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]
+then
+    echo "usage: $0 [abbr] [url]"
+    exit 1
+fi
+
+mkdir "$1"
+cat <<eof >"$1/index.html"
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>kbd.fi</title>
+        <link rel='canonical' href='$2'/>
+        <meta http-equiv='refresh' content='0;URL=$2'>
+        <script>location='$2'</script>
+    </head>
+    <body></body>
+</html>
+eof
+
+./update
