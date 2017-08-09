@@ -7,7 +7,7 @@ then
 fi
 
 mkdir "$1"
-cat <<eof >"$1/index.html"
+cat <<eos >"$1/index.html"
 <!DOCTYPE html>
 <html lang='en'>
     <head>
@@ -18,6 +18,6 @@ cat <<eof >"$1/index.html"
     </head>
     <body></body>
 </html>
-eof
+eos
 
 ./update
